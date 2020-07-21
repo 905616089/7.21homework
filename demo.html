@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .clic {
+            width: 50px;
+            height: 50px;
+            background: violet;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .box{
+
+            margin: 100px;
+            width: 500px;
+            height: 500px;
+            border:1px solid red;
+            position: relative;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    <div class="clic"></div>
+    </div>
+    <script src="demo1.js"></script>
+    <script>
+
+        // var div = document.querySelector(".clic");
+        // div.onmousedown = function (down) {
+        //     console.log("doa")
+        //     var ux=this.offsetLeft;
+        //     var uy=this.offsetTop;
+        //     console.log(ux);
+        //     var dx=down.clientX;
+        //     var dy=down.clientY;
+        //     var realx=dx-ux;
+        //     var realy=dy-uy;
+        //     console.log(realx)
+        //     document.onmousemove = function (res) {
+        //         div.style.left = res.clientX -realx + "px";
+        //         div.style.top = res.clientY -realy+ "px";
+        //         res.preventDefault();
+        //     }
+        //     document.onmouseup = function (res) {
+        //         document.onmousemove=null;
+        //         document.onmousedown=null;
+        //     }
+          
+        // }
+        
+        var obj=new move(".clic");
+        //设定x，y方向上是否可以拖拽
+        obj.x=true;
+        obj.y=true;
+        obj.max.minx=0;
+        obj.max.miny=0;
+        obj.max.maxx=450;
+        obj.max.maxy=450;
+        obj.main(function(){
+            this.div.style.background="red";
+        });
+
+        
+    </script>
+</body>
+
+</html>
